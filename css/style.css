@@ -506,7 +506,7 @@ a.image,
 }
 
 .image img {
-    width: 100%;
+    width: 70%;
 }
 
 section,
@@ -6792,20 +6792,6 @@ ul.latest_news li a:focus+span.defaultcolor {
 /* =============================
    GLOBAL TRANSPARENT PATTERN
    ============================= */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* clicks pass through */
-    background-image: url("images/crissxcross.png"); /* your pattern */
-    background-size: 250px; /* adjust size */
-    background-repeat: repeat;
-    opacity: 0.15; /* transparency */
-    z-index: 0;
-}
 
 
 #our-process {
@@ -6813,45 +6799,201 @@ body::before {
     padding-bottom: 40px !important;
 }
 
-/* Container */
+/* Main container */
 .scroll-container {
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
+    position: relative;
+    padding: 10px 0;
 }
 
 /* Track */
-.scroll-track {
+.marquee {
     display: flex;
-    width: calc(200%); /* duplicates ensure endless scroll */
+    gap: 20px;
+    width: max-content;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Left direction */
+.marquee-left {
+    animation-name: marqueeLeft;
+    animation-duration: 75s;
+}
+
+/* Right direction */
+.marquee-right {
+    animation-name: marqueeRight;
+    animation-duration: 75s;
 }
 
 /* Images */
-.scroll-track img {
-    height: 140px;
-    margin: 0 20px;
-    border: 4px solid #ffffff33;
-    border-radius: 12px;
+.marquee img {
+    height: 180px;
+    border-radius: 10px;
+    transition: transform .3s;
+    flex-shrink: 0;
+}
+
+/* Hover zoom */
+.marquee img:hover {
+    transform: scale(1.05);
+}
+.marquee {
+    will-change: transform;
+}
+
+
+/* Perfect seamless animation */
+@keyframes marqueeLeft {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marqueeRight {
+    0%   { transform: translate3d(-50%, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.marquee img {
+    content-visibility: auto;
+}
+
+.marquee img {
+    animation-play-state: paused;
+}
+
+
+/*Exterior Interior*/
+.design-img {
+    width: 100%;
+    height: 380px;
     object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* LEFT → RIGHT */
-.scroll-left {
-    animation: slideLeft 40s linear infinite;
+.custom-list {
+    margin-top: 15px;
+    padding-left: 18px;
 }
 
-@keyframes slideLeft {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.custom-list li {
+    margin-bottom: 8px;
+    font-size: 16px;
 }
 
-/* RIGHT → LEFT */
-.scroll-right {
-    animation: slideRight 40s linear infinite;
+
+#interior .custom-list li span {
+    color: #1ea9d6;
+    font-weight: bold;
+}
+#exterior-design .custom-list li span {
+    color: #1ec9ff;
+    font-weight: bold;
+}
+#construction-services .construction-list li span{
+    color: #1ec9ff;
+}
+/* --- Universal Fade Slider Container --- */
+.fade-slider {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-@keyframes slideRight {
-    0%   { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
+/* --- Every Image --- */
+.fade-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    border-radius: 15px;
+
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
+/* --- Crossfade Animation --- */
+@keyframes fadeCycle {
+    0%   { opacity: 0; transform: scale(1); }
+    5%   { opacity: 1; transform: scale(1.05); }
+    20%  { opacity: 1; transform: scale(1.1); }
+    25%  { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 0; transform: scale(1); }
+}
+/* Interior slider uses 76s cycle */
+#interior .fade-slider img {
+    animation-name: fadeCycle;
+    animation-duration: 76s;
+}
+#interior .fade-slider img:nth-child(1)  { animation-delay: 0s; }
+#interior .fade-slider img:nth-child(2)  { animation-delay: 4s; }
+#interior .fade-slider img:nth-child(3)  { animation-delay: 8s; }
+#interior .fade-slider img:nth-child(4)  { animation-delay: 12s; }
+#interior .fade-slider img:nth-child(5)  { animation-delay: 16s; }
+#interior .fade-slider img:nth-child(6)  { animation-delay: 20s; }
+#interior .fade-slider img:nth-child(7)  { animation-delay: 24s; }
+#interior .fade-slider img:nth-child(8)  { animation-delay: 28s; }
+#interior .fade-slider img:nth-child(9)  { animation-delay: 32s; }
+#interior .fade-slider img:nth-child(10) { animation-delay: 36s; }
+#interior .fade-slider img:nth-child(11) { animation-delay: 40s; }
+#interior .fade-slider img:nth-child(12) { animation-delay: 44s; }
+#interior .fade-slider img:nth-child(13) { animation-delay: 48s; }
+#interior .fade-slider img:nth-child(14) { animation-delay: 52s; }
+#interior .fade-slider img:nth-child(15) { animation-delay: 56s; }
+#interior .fade-slider img:nth-child(16) { animation-delay: 60s; }
+#interior .fade-slider img:nth-child(17) { animation-delay: 64s; }
+#interior .fade-slider img:nth-child(18) { animation-delay: 68s; }
+#interior .fade-slider img:nth-child(19) { animation-delay: 72s; }
+/* Exterior slider uses 44s cycle */
+#exterior-design .fade-slider img {
+    animation-name: fadeCycle;
+    animation-duration: 44s;
+}
+#exterior-design .fade-slider img:nth-child(1)  { animation-delay: 0s; }
+#exterior-design .fade-slider img:nth-child(2)  { animation-delay: 4s; }
+#exterior-design .fade-slider img:nth-child(3)  { animation-delay: 8s; }
+#exterior-design .fade-slider img:nth-child(4)  { animation-delay: 12s; }
+#exterior-design .fade-slider img:nth-child(5)  { animation-delay: 16s; }
+#exterior-design .fade-slider img:nth-child(6)  { animation-delay: 20s; }
+#exterior-design .fade-slider img:nth-child(7)  { animation-delay: 24s; }
+#exterior-design .fade-slider img:nth-child(8)  { animation-delay: 28s; }
+#exterior-design .fade-slider img:nth-child(9)  { animation-delay: 32s; }
+#exterior-design .fade-slider img:nth-child(10) { animation-delay: 36s; }
+#exterior-design .fade-slider img:nth-child(11) { animation-delay: 40s; }
+
+/* Fix unwanted horizontal scrolling */
+html, body {
+    overflow-x: hidden !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Prevent images from expanding outside viewport */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix scroll slider overflow */
+.scroll-container,
+.scroll-track,
+.scroll-track img {
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+/* Fix scroll-down arrow overflow */
+.scroll-down, 
+.scroll-down i {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}

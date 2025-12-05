@@ -3453,9 +3453,9 @@ iframe {
     display: table-cell;
 }
 
-.process-wrapp li:hover {
+/* .process-wrapp li:hover {
     cursor: pointer;
-}
+} */
 
 .process-wrapp li>.pro-step {
     height: 90px;
@@ -3743,13 +3743,13 @@ iframe {
 
 /*half sections*/
 
-.half-section-alt::before {
+/* .half-section-alt::before {
     height: 60%;
     left: 0;
     bottom: 0;
     width: 100%;
     background: #454545;
-}
+} */
 
 
 /*App Features ends*/
@@ -7360,7 +7360,7 @@ img {
 }
 
 #our-process .process-wrapp li {
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 /* Construction services slider */
@@ -7392,4 +7392,37 @@ img {
 
 #construction-services .fade-slider img:nth-child(5) {
     animation-delay: 24s;
+}
+
+/* reviews text */
+#reviewstext{
+    color :#efefef;
+} 
+
+/* Center footer content on mobile */
+@media (max-width: 768px) {
+    footer,
+    footer .row,
+    footer .col,
+    footer .col-md-3,
+    footer .col-md-4,
+    footer .footer-widget {
+        text-align: center !important;
+    }
+
+    footer .footer-widget img,
+    footer .footer-logo {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    footer ul {
+        padding-left: 0 !important;
+    }
+
+    footer ul li {
+        display: block;
+        margin: 6px 0;
+    }
 }

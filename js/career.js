@@ -2,16 +2,16 @@
 (function(){
   // sample jobs — replace with real data from backend or JSON
   const jobs = [
-    { id: 1, title: "Frontend Developer", dept: "Engineering", type: "Full-time",
-      location: "Remote / Kochi", summary: "Build beautiful UI with HTML/CSS/JS. Familiarity with Bootstrap and responsive layouts." },
-    { id: 2, title: "Project Engineer", dept: "Project", type: "Full-time",
-      location: "On-site / Kerala", summary: "Manage site deliveries, coordinate contractors and ensure quality standards." },
-    { id: 3, title: "UI/UX Designer", dept: "Design", type: "Contract",
-      location: "Hybrid", summary: "Create wireframes and visual designs for web and mobile." },
-    { id: 4, title: "Sales Executive", dept: "Sales", type: "Full-time",
-      location: "Field", summary: "Drive client acquisition and handle leads end-to-end." },
-    { id: 5, title: "Intern - Civil", dept: "Engineering", type: "Intern",
-      location: "On-site", summary: "Assist site engineers, take measurements and support small tasks." }
+    { id: 1, title: "Project Manager", dept: "Engineering", type: "Full-time",
+      location: "Remote / Kochi", summary: "Lead our team of project managers to ensure timely delivery and quality." },
+    { id: 2, title: "Project Engineer", dept: "Engineering", type: "Full-time",
+      location: "On-site / Kerala", summary: "Designs from concept to completion, ensuring structural integrity and compliance." },
+    { id: 3, title: "Site Supervisor", dept: "Supervising", type: "Contract",
+      location: "Hybrid", summary: "Oversees daily site operations, ensuring safety and adherence to plans." },
+    { id: 4, title: "Manager", dept: "Manager", type: "Full-time",
+      location: "Field", summary: "Manage the worksites and drive revenue growth." },
+    { id: 5, title: "Store Keeper", dept: "Storekeeping", type: "Intern",
+      location: "On-site", summary: "Support the company by keeping inventory organized and up-to-date." }
   ];
 
   const $jobsList = document.getElementById('jobs-list');

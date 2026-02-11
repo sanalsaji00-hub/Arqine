@@ -1,0 +1,25 @@
+/* Careers section styles */
+#careers { background: #f7f9fb; }
+#careers h2 { font-weight: 600; letter-spacing: .3px; }
+.job-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem;
+  -webkit-box-shadow: 0 6px 18px rgba(36,49,60,0.06);
+  box-shadow: 0 6px 18px rgba(36,49,60,0.06);
+  border: 1px solid #eef3f6;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.job-meta { font-size: 13px; color: #6b747c; margin-bottom: .5rem; }
+.job-title { font-size: 1.05rem; margin-bottom: .4rem; color:#26313c; font-weight:600; }
+.job-badges { gap: .5rem; display:flex; flex-wrap:wrap; margin-bottom:.75rem; }
+.job-badges .badge { background: #e9f8fb; color:#24cdd5; border-radius: 6px; padding:4px 8px; font-weight:600; font-size:12px; }
+.job-desc { color:#556872; font-size:14px; margin-bottom: .75rem; flex:1; }
+.job-footer { display:flex; justify-content:space-between; align-items:center; gap: 1rem; margin-top: .75rem; }
+.job-apply { min-width:145px; }
+@media (max-width:767px) {
+  .job-footer { flex-direction:column; align-items:flex-start; gap:.5rem; }
+}
